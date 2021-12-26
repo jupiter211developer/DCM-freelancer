@@ -1,0 +1,22 @@
+token: {{ token }}
+<section class="d-flex align-items-center justify-content-center h-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-5 col-md-5 p-5 shadow">
+                <form [formGroup]="loginForm" class="w-100 pt-4 meduim" (ngSubmit)="onSubmit()">
+                    <mat-form-field appearance="outline" class="mb-3">
+                        <input type="email" matInput formControlName="email" required placeholder="EMAIL" (click)="loginError=null">
+                        <mat-icon matSuffix>mail_outline</mat-icon>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <input [type]="show ? 'text' : 'password'" placeholder="PASSWORD" matInput formControlName="password" required (click)="loginError=null">
+                        <mat-icon matSuffix (click)="show = !show">{{show ? 'visibility' : 'visibility_off'}}</mat-icon>
+                    </mat-form-field>
+
+                    <button type="submit" class="btn center primary my-3 px-5">
+                        CONNECTION</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
